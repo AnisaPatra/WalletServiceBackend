@@ -4,9 +4,9 @@ const walletRouter = express.Router();
 const walletController = require('../controllers/walletController');
 
 walletRouter.post('/setup',walletController.setupWallet);
-walletRouter.put('/:id',walletController.updateWalletById);
-walletRouter.delete('/:id',walletController.deleteWalletById);
-walletRouter.get('/:id',walletController.getWalletById);
+walletRouter.put('/:walletId',walletController.updateWalletById);
+walletRouter.delete('/:walletId',walletController.deleteWalletById);
+walletRouter.get('/:walletId',walletController.getWalletById);
 
 module.exports = {walletRouter};
 

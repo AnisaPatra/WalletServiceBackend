@@ -22,11 +22,9 @@ const transactionSchema = new mongoose.Schema({
     amount: {
         type: number,
         required: true
-    },
-    createdAt: {
-        type: Date,
-        default: new Date
     }
+},{
+    timestamps: true // This will add createdAt and updatedAt fields automatically
 })
 
 transactionSchema.index({ walletId: 1, createdAt: -1 });
