@@ -18,7 +18,7 @@ const getAllWallets = async(req,res) => {
 
 }
 
-module.exports = {
+export {
     setupWallet,
     updateWalletById,
     deleteWalletById,

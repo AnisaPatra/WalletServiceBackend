@@ -9,5 +9,5 @@ walletRouter.delete('/:id',walletController.deleteWalletById);
 walletRouter.get('/:id',walletController.getWalletById);
 walletRouter.get('/',walletController.getAllWallets);
 
-module.exports = walletRouter;
+export {walletRouter};
 

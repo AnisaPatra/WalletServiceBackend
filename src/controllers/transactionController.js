@@ -14,7 +14,7 @@ const getAlltransactionsByWalletId = async(req,res) => {
 
 }
 
-module.exports = {
+export {
     postTransactionById,
     updateTransactionById,
     getTransactionById,

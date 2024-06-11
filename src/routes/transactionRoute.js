@@ -8,4 +8,4 @@ transactionRouter.put('/:id',transactionController.updateTransactionById);
 transactionRouter.get('/:id',transactionController.getTransactionById);
 transactionRouter.get('/:walletId',transactionController.getAlltransactionsByWalletId);
 
-module.exports = transactionRouter;
+export {transactionRouter};
