@@ -18,8 +18,8 @@ const getTransactionById = async(walletId) => {
     return transaction;
 }
 
-const getAlltransactionsByWalletId = async(walletId) => {
-    const transactions = await transactionModel.find({ "walletId": walletId });
+const getAlltransactionsByWalletId = async(walletId, skip, limit) => {
+    const transactions = await transactionModel.find({ "walletId": walletId }).skip(skip).limit(limit);
     if (!transactions) {
         throw new Error('Transactions not found');
     }

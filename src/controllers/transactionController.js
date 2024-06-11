@@ -21,8 +21,8 @@ const getTransactionById = async(req,res) => {
 
 const getAlltransactionsByWalletId = async(req,res) => {
     try {
-        const { walletId } = req.params;
-        const transactions = await transactionService.getAlltransactionsByWalletId(walletId);
+        const { walletId, skip, limit } = req.params;
+        const transactions = await transactionService.getAlltransactionsByWalletId(walletId, skip, limit);
         res.status(200).json({ 'message': 'Transactions fetched successfully', transactions });
     } catch (error) {
         res.status(400).json({ error: error.message });
