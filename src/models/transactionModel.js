@@ -20,7 +20,7 @@ const transactionSchema = new mongoose.Schema({
         type: String
     },
     amount: {
-        type: number,
+        type: Number,
         required: true
     }
 },{
@@ -29,6 +29,6 @@ const transactionSchema = new mongoose.Schema({
 
 transactionSchema.index({ walletId: 1, createdAt: -1 });
 
-const transactionModel = mongoose.model('transactionModel',transactionSchema);
+const transaction = mongoose.model('transaction',transactionSchema);
 
-export {transactionModel};
+module.exports = {transaction};

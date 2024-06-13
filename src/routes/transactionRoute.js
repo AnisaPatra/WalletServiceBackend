@@ -5,6 +5,6 @@ const transactionController = require('../controllers/transactionController');
 
 transactionRouter.post('/:walletId',transactionController.postTransactionById);
 transactionRouter.get('/:transactionId',transactionController.getTransactionById);
-transactionRouter.get('/:walletId',transactionController.getAlltransactionsByWalletId);
+transactionRouter.get('/',transactionController.getAlltransactionsByWalletId);
 
 module.exports = {transactionRouter};

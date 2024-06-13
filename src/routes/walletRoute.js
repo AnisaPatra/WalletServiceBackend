@@ -7,6 +7,7 @@ walletRouter.post('/setup',walletController.setupWallet);
 walletRouter.put('/:walletId',walletController.updateWalletById);
 walletRouter.delete('/:walletId',walletController.deleteWalletById);
 walletRouter.get('/:walletId',walletController.getWalletById);
+walletRouter.get('/',walletController.getWallets);
 
 module.exports = {walletRouter};
 

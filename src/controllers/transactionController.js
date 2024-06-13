@@ -1,9 +1,10 @@
+const transactionService = require("../services/transactionService");
+
 const postTransactionById = async(req,res) => {
     try {
         const {walletId} = req.params;
-        const { type, desctiption, amount } = req.body;
-        const transaction = await transactionService.createTransaction(walletId, type, desctiption, amount);
-        res.status(201).json({ 'message': 'Transaction created successfully', transactionId: transaction });
+        const transaction = await transactionService.createTransaction(walletId, req.body);
+        res.status(201).json({ 'message': 'Transaction created successfully', transactionId: transaction.transactionId });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -21,8 +22,8 @@ const getTransactionById = async(req,res) => {
 
 const getAlltransactionsByWalletId = async(req,res) => {
     try {
-        const { walletId, skip, limit } = req.params;
-        const transactions = await transactionService.getAlltransactionsByWalletId(walletId, skip, limit);
+        const { walletId, skip, limit, sortBy, sortOrder } = req.query;
+        const transactions = await transactionService.getAlltransactionsByWalletId(walletId, skip, limit, sortBy, sortOrder);
         res.status(200).json({ 'message': 'Transactions fetched successfully', transactions });
     } catch (error) {
         res.status(400).json({ error: error.message });

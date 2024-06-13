@@ -18,6 +18,6 @@ const walletSchema = new mongoose.Schema({
     timestamps: true // This will add createdAt and updatedAt fields automatically
 })
 
-const walletModel = mongoose.model('walletModel', walletSchema);
+const wallet = mongoose.model('wallet', walletSchema);
 
-module.exports =  {walletModel};
+module.exports =  {wallet};
