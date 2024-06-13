@@ -37,35 +37,41 @@ System Requirements
 - Wallet
 
 POST /wallet/setup
-Req
+
+Request: 
 {
   "name": "Wallet1",
   "balance": 100
 }
-Res
+
+Response: 
 {
   "message": "Wallet created successfully",
   "walletId": "60c72b2f9b1e8c001c8a1234"
 }
 
 PUT /wallet/:walletId
-Req
+
+Request: 
 {
   "balance": 200
 }
-Res
+
+Response : 
 {
   "message": "Wallet updated successfully"
 }
 
 DELETE /wallet/:walletId
-Res
+
+Response : 
 {
   "message": "Wallet deleted successfully"
 }
 
 GET /wallet/:walletId
-Res
+
+Response : 
 {
   "message": "Wallet fetched successfully",
   "walletDetails": {
@@ -76,7 +82,8 @@ Res
 }
 
 GET /wallet
-Res
+
+Response : 
 {
   "message": "Wallets fetched successfully",
   "walletDetails": [{
@@ -93,19 +100,23 @@ Res
 - Transactions
 
 POST /transaction/:walletId
-Req
+
+Request: 
 {
   "amount": 50,
   "description":"Transaction Description",
   "type": "CREDIT" // or "DEBIT"
 }
-Res
+
+Response : 
 {
   "message": "Transaction created successfully",
   "transactionId": "60c72b2f9b1e8c001c8a1234"
 }
 
 GET /transaction/:transactionId
+
+Response : 
 {
   "message": "Transaction fetched successfully",
   "transaction": {
@@ -116,12 +127,14 @@ GET /transaction/:transactionId
 }
 
 GET /transaction
+
 Request Parameters (as query parameters):
 
 walletId: ID of the wallet to retrieve transactions for
 skip (optional): Number of transactions to skip
 limit (optional): Number of transactions to retrieve
 
+Response : 
 {
   "message": "Transactions fetched successfully",
   "transactions": [
