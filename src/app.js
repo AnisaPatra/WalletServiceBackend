@@ -30,6 +30,7 @@ run().catch(console.dir);
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => res.send("Backend On!"));
 app.use('/wallet', walletRouter);
 app.use('/transaction', transactionRouter);
 app.listen(port, (err) => {
