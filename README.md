@@ -1,6 +1,8 @@
 # WalletService
 A basic wallet service that features top-up and transactions
 
+You can access the backend live on https://walletservicebackend-production.up.railway.app
+
 ### System Design
 
 Functional Requirements
